@@ -1,7 +1,5 @@
 package com.bussin.SpringDirections.models;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,10 +14,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
-import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -42,20 +40,17 @@ public class PlannedRoute implements Serializable {
     @NotNull(message = "Date and time should not be empty")
     private LocalDateTime dateTime;
 
-//    Store longitude and latitude as BigDecimals of precision 6 and scale 9,
-//    8 respectively
-//    https://stackoverflow.com/questions/1196415/what-datatype-to-use-when-storing-latitude-and-longitude-data-in-sql-databases
-   @Column(scale = 9, precision = 6)
-   private BigDecimal originLongitude;
+    @Column(scale = 6, precision = 9)
+    private BigDecimal originLongitude;
 
-   @Column(scale = 8, precision = 6)
-   private BigDecimal originLatitude;
+    @Column(scale = 6, precision = 8)
+    private BigDecimal originLatitude;
 
-   @Column(scale = 9, precision = 6)
-   private BigDecimal destLongitude;
+    @Column(scale = 6, precision = 9)
+    private BigDecimal destLongitude;
 
-   @Column(scale = 8, precision = 6)
-   private BigDecimal destLatitude;
+    @Column(scale = 6, precision = 8)
+    private BigDecimal destLatitude;
 
 
     @Override
