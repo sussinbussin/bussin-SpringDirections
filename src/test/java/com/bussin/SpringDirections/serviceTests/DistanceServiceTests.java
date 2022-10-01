@@ -2,7 +2,6 @@ package com.bussin.SpringDirections.serviceTests;
 
 import com.bussin.SpringDirections.services.DirectionsService;
 import com.bussin.SpringDirections.testConfig.H2JpaConfig;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,8 +23,11 @@ public class DistanceServiceTests {
     @Autowired
     private DirectionsService directionsService;
 
-    @Test
-    public void testDistance() {
-        System.out.println(directionsService.getDistanceBetween("556748", "188065"));
-    }
+    /**
+     * Example call, not an actual test
+     */
+//    @Test
+//    public void testDistance() {
+//        System.out.println(directionsService.getDistanceBetween("556748", "188065"));
+//    }
 }
